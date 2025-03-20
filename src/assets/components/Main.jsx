@@ -9,14 +9,13 @@ export default function Main() {
   const [ingredients, setIngredients] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const [recipe, setRecipe] = React.useState("");
-  const loaderRef = React.useRef(null); // Reference to scroll to the loader
-
+  const loaderRef = React.useRef(null);
 
   async function ToggleGetRecipe() {
     setLoading(true);
     setTimeout(() => {
       loaderRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, 100); // Small delay for better UX
+    }, 100);
 
     try {
       const recipeMarkdown = await getRecipeFromMistral(ingredients);
@@ -27,18 +26,22 @@ export default function Main() {
       setLoading(false);
     }
   }
+
   function addIngredient(formData) {
     const newIngredient = formData.get("ingredient");
     setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
-    console.log(newIngredient);
   }
 
   return (
-    <main>
-      <Form handleAction={addIngredient} />
-      <List item={ingredients} />
-      <GenerateBtn item={ingredients} handleClick={ToggleGetRecipe} loading={loading} lodref={loaderRef} />
-      <Recipe recipeData={recipe} item={ingredients} loading={loading} />
+    <main className="min-h-screen bg-gray-100 p-6">
+      <div className="max-w-4xl mx-auto">
+        <Form handleAction={addIngredient} />
+        <List item={ingredients} />
+        <GenerateBtn item={ingredients} handleClick={ToggleGetRecipe} loading={loading} lodref={loaderRef} />
+        <div ref={loaderRef}>
+          <Recipe item={ingredients} recipeData={recipe} loading={loading} />
+        </div>
+      </div>
     </main>
   );
 }

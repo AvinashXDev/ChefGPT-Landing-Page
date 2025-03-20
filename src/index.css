@@ -215,3 +215,66 @@ ul.ingredients-list > li {
     font-size: 2rem;
   }
 }
+.suggested-recipe-container {
+  background-color: #FFF8E1;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  /* max-width: 100vh; */
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Mukta', sans-serif;
+}
+
+.suggested-recipe-container h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #FF6F61;
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #FF6F61;
+  padding-bottom: 5px;
+}
+
+.suggested-recipe-container article {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.suggested-recipe-container ul,
+.suggested-recipe-container ol {
+  padding-left: 25px;
+  margin: 10px 0;
+}
+
+.suggested-recipe-container ul li,
+.suggested-recipe-container ol li {
+  margin-bottom: 8px;
+}
+
+.suggested-recipe-container strong {
+  color: #D17557;
+}
+
+.suggested-recipe-container em {
+  font-style: italic;
+  color: #6B7280;
+}
+
+.suggested-recipe-container p {
+  margin-bottom: 12px;
+  color: #444;
+}
+
+/* Media Query for larger screens */
+@media screen and (min-width: 768px) {
+  .suggested-recipe-container {
+    padding: 30px;
+  }
+
+  .suggested-recipe-container h2 {
+    font-size: 1.8rem;
+  }
+}
