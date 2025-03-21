@@ -1,6 +1,6 @@
 
 export async function getRecipeFromMistral(ingredientsArr) {
-    const apiKey = import.meta.env.TOKEN;
+    const apiKey = import.meta.env.VITE_HF_TOKEN;
   
     if (!apiKey) {
       console.error("Hugging Face API key is missing!");
