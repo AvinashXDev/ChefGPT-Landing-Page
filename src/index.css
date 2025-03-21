@@ -114,20 +114,17 @@
   height: 30px;
   animation: spin 1s linear infinite;
 }
-
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-@media screen and (min-width: 640px){
-  .spinner {
-    width: 40px;
-    height: 40px;
-    border-width: 4px;
-  }
-
-  .loader {
-    height: 50vh;
-    font-size: 2rem;
-  }
+@media screen and (min-width: 640px) {  .spinner {
+  width: 40px;
+  height: 40px;
+  border-width: 4px;
 }
+
+.loader {
+  height: 50vh;
+  font-size: 2rem;
+}}
