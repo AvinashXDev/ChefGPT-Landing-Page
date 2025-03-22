@@ -39,10 +39,10 @@ function App() {
             </div>
             <div className="flex items-center space-x-4">
               <button className="text-gray-300 hover:text-white transition-colors">Sign In</button>
-              {/* <a href="https://chefgpt-avinashxdev-avinashxdevs-projects.vercel.app/"><button className="bg-emerald-500 hover:bg-emerald-600 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/20">
+              <a href="https://chefgpt-avinashxdev-avinashxdevs-projects.vercel.app/"><button className="bg-emerald-500 hover:bg-emerald-600 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/20">
                 Get Started
-              </button></a> */}
-              <LinkWithLoading notNav={false}/>
+              </button></a>
+              
 
               
             </div>
@@ -85,7 +85,10 @@ function App() {
               Your AI-powered culinary companion. Transform ingredients into extraordinary recipes with the power of artificial intelligence.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in">
-              <LinkWithLoading notNav={true}/>
+            <a href="https://chefgpt-avinashxdev-avinashxdevs-projects.vercel.app/" ><button className="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/20 group">
+              <span>Start Cooking</span>
+              <Sparkles className="w-5 h-5 inline ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </button></a>
              <a href=""> <button className="w-full sm:w-auto border-2 border-emerald-500/50 hover:border-emerald-500 text-emerald-400 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:bg-emerald-500/10">
                 Watch Demo
               </button></a>
@@ -229,42 +232,5 @@ function FeatureCard({ icon, title, description, delay }: { icon: React.ReactNod
   
   
 }
-function LinkWithLoading({notNav}){
-  const [loading, setLoading] = useState(false);
 
-  const handleClick = (event) => {
-    event.preventDefault(); // Prevent default navigation for demo purposes
-    setLoading(true);
-
-    // Simulating an async task (e.g., API call, page navigation)
-    setTimeout(() => {
-      setLoading(false);
-      window.location.href = "https://chefgpt-avinashxdev-avinashxdevs-projects.vercel.app/"; // Replace with your link
-    }, 2000);
-  };
-
-  return (
-    <div>
-      {loading ? <button
-          className="relative w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-6 py-2 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20"
-          disabled
-        >
-          <span className="invisible">Start Cooking</span>
-          <span className="absolute inset-0 flex items-center justify-center">
-            <Loader2Icon className="w-10 h-10 animate-spin" />
-          </span>
-        </button> : <a href="https://chefgpt-avinashxdev-avinashxdevs-projects.vercel.app/" onClick={handleClick}>  {notNav ? (
-            <button className="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/20 group">
-              <span>Start Cooking</span>
-              <Sparkles className="w-5 h-5 inline ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </button>
-          ) : (
-            <button className="bg-emerald-500 hover:bg-emerald-600 px-6 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/20">
-              Get Started
-            </button>
-          )}</a>}
-    </div>
-  );
-
-}
 export default App;
