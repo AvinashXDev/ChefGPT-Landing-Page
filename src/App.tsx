@@ -52,66 +52,80 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <div className="relative min-h-screen overflow-hidden flex items-center" id='home'>
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=2070"
-            alt="Kitchen Background"
-            className="w-full h-full object-cover opacity-10 scale-105 transform transition-transform duration-10000 animate-slow-zoom"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-900/95 to-gray-800"></div>
-        </div>
+      <div className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden" id='home'>
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=2070"
+      alt="Kitchen Background"
+      className="w-full h-full object-cover opacity-10 scale-105 transform transition-transform duration-10000 animate-slow-zoom"
+    />
+    <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-900/95 to-gray-800"></div>
+  </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <div className="text-center">
-            <div
-              className="inline-flex items-center justify-center mb-6 group cursor-pointer"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <div className="relative">
-                <ChefHat className={`w-16 h-16 text-emerald-400 transition-all duration-300 ${isHovered ? 'rotate-12 scale-110' : ''}`} />
-                <Sparkles className={`absolute -right-2 -top-2 w-8 h-8 text-emerald-400 transition-all duration-300 ${isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`} />
-              </div>
-            </div>
-            <div className="relative">
-              <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-6 animate-fade-in bg-gradient-to-r from-white via-emerald-200 to-emerald-400 text-transparent bg-clip-text">
-                Chef<span className="text-emerald-400 animate-pulse">GPT</span>
-              </h1>
-              <div className="absolute -top-4 -right-4 animate-spin-slow">
-                <Star className="w-8 h-8 text-emerald-400/30" />
-              </div>
-            </div>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 animate-slide-up leading-relaxed">
-              Your AI-powered culinary companion. Transform ingredients into extraordinary recipes with the power of artificial intelligence.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in">
-              <button onClick={() => window.location.href = "https://chefgpt-yopb.vercel.app/"} className="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/20 group">
-                <span>Start Cooking</span>
-                <Sparkles className="w-5 h-5 inline ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </button>
-               <button className="w-full sm:w-auto border-2 border-emerald-500/50 hover:border-emerald-500 text-emerald-400 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:bg-emerald-500/10">
-                Watch Demo
-              </button>
-
-            </div>
-            <div className="mt-12 flex items-center justify-center gap-8 text-gray-400 animate-fade-in">
-              <div className="flex items-center">
-                <Users className="w-5 h-5 mr-2" />
-                <span>10k+ Users(soon)</span>
-              </div>
-              <div className="flex items-center">
-                <Star className="w-5 h-5 mr-2" />
-                <span>4.9 Rating(by me)</span>
-              </div>
-              <div className="flex items-center">
-                <Heart className="w-5 h-5 mr-2" />
-                <span>50k+ Recipes(soon)</span>
-              </div>
-            </div>
-          </div>
+  {/* Content */}
+  <div className="relative max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12 py-24 sm:py-32">
+    <div className="text-center">
+      {/* Icon */}
+      <div 
+        className="inline-flex items-center justify-center mb-6 group cursor-pointer"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className="relative">
+          <ChefHat className={`w-16 h-16 text-emerald-400 transition-all duration-300 ${isHovered ? 'rotate-12 scale-110' : ''}`} />
+          <Sparkles className={`absolute -right-2 -top-2 w-8 h-8 text-emerald-400 transition-all duration-300 ${isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`} />
         </div>
       </div>
+
+      {/* Title */}
+      <div className="relative">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6 animate-fade-in bg-gradient-to-r from-white via-emerald-200 to-emerald-400 text-transparent bg-clip-text">
+          Chef<span className="text-emerald-400 animate-pulse">GPT</span>
+        </h1>
+        <div className="absolute -top-4 -right-4 animate-spin-slow">
+          <Star className="w-8 h-8 text-emerald-400/30" />
+        </div>
+      </div>
+
+      {/* Description */}
+      <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-8 animate-slide-up leading-relaxed px-4 sm:px-0">
+        Your AI-powered culinary companion. Transform ingredients into extraordinary recipes with the power of artificial intelligence.
+      </p>
+
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in">
+        <button 
+          onClick={() => window.location.href = "https://chefgpt-yopb.vercel.app/"} 
+          className="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-6 sm:px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20 group"
+        >
+          <span>Start Cooking</span>
+          <Sparkles className="w-5 h-5 inline ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+        </button>
+        <button className="w-full sm:w-auto border-2 border-emerald-500/50 hover:border-emerald-500 text-emerald-400 px-6 sm:px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:bg-emerald-500/10">
+          Watch Demo
+        </button>
+      </div>
+
+      {/* Stats Section */}
+      <div className="mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-gray-400 animate-fade-in">
+        <div className="flex items-center">
+          <Users className="w-5 h-5 mr-2" />
+          <span>10k+ Users (soon)</span>
+        </div>
+        <div className="flex items-center">
+          <Star className="w-5 h-5 mr-2" />
+          <span>4.9 Rating (by me)</span>
+        </div>
+        <div className="flex items-center">
+          <Heart className="w-5 h-5 mr-2" />
+          <span>50k+ Recipes (soon)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       {/* Features Section */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32" id="features">
