@@ -28,7 +28,8 @@ function App() {
             <div className="flex items-center space-x-8">
               <div className="flex items-center">
                 <ChefHat className="w-8 h-8 text-emerald-400" />
-                <a href="#home"><span className="ml-2 text-xl font-bold">ChefGPT</span></a>
+                <a href="#home"><span className="ml-2 text-xl font-bold bg-gradient-to-r from-white via-emerald-200 to-emerald-400 text-transparent bg-clip-text">ChefGPT</span></a>
+               
               </div>
               <div className="hidden md:flex space-x-6">
                 <a href="#features" className="text-gray-300 hover:text-emerald-400 transition-colors">Features</a>
@@ -81,10 +82,11 @@ function App() {
               Your AI-powered culinary companion. Transform ingredients into extraordinary recipes with the power of artificial intelligence.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in">
-              <button className="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/20 group">
+              <a href="https://chefgpt-avinashxdev-avinashxdevs-projects.vercel.app/"> <button className="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/20 group">
                 Start Cooking
                 <Sparkles className="w-5 h-5 inline ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </button>
+              </button></a>
+             
               <button className="w-full sm:w-auto border-2 border-emerald-500/50 hover:border-emerald-500 text-emerald-400 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:bg-emerald-500/10">
                 Watch Demo
               </button>
