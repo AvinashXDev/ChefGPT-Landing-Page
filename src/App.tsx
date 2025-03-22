@@ -28,7 +28,8 @@ function App() {
             <div className="flex items-center space-x-8">
               <div className="flex items-center">
                 <ChefHat className="w-8 h-8 text-emerald-400" />
-                <span className="ml-2 text-xl font-bold">ChefGPT</span>
+                <a href="#home"><span className="ml-2 text-xl font-bold bg-gradient-to-r from-white via-emerald-200 to-emerald-400 text-transparent bg-clip-text">ChefGPT</span></a>
+
               </div>
               <div className="hidden md:flex space-x-6">
                 <a href="#features" className="text-gray-300 hover:text-emerald-400 transition-colors">Features</a>
@@ -38,16 +39,20 @@ function App() {
             </div>
             <div className="flex items-center space-x-4">
               <button className="text-gray-300 hover:text-white transition-colors">Sign In</button>
-              <button className="bg-emerald-500 hover:bg-emerald-600 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/20">
+              <a href="https://chefgpt-yopb.vercel.app/">  <button className="bg-emerald-500 hover:bg-emerald-600 px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/20">
                 Get Started
-              </button>
+              </button></a>
+            
+
+
+
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <div className="relative min-h-screen overflow-hidden flex items-center">
+      <div className="relative min-h-screen overflow-hidden flex items-center" id='home'>
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=2070"
@@ -59,7 +64,7 @@ function App() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="text-center">
-            <div 
+            <div
               className="inline-flex items-center justify-center mb-6 group cursor-pointer"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
@@ -81,26 +86,28 @@ function App() {
               Your AI-powered culinary companion. Transform ingredients into extraordinary recipes with the power of artificial intelligence.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in">
-              <button className="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/20 group">
-                Start Cooking
+              <a href="https://chefgpt-yopb.vercel.app/"> <button className="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/20 group">
+                <span>Start Cooking</span>
                 <Sparkles className="w-5 h-5 inline ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </button>
-              <button className="w-full sm:w-auto border-2 border-emerald-500/50 hover:border-emerald-500 text-emerald-400 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:bg-emerald-500/10">
+              </button></a>
+             <a href="">   <button className="w-full sm:w-auto border-2 border-emerald-500/50 hover:border-emerald-500 text-emerald-400 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 hover:bg-emerald-500/10">
                 Watch Demo
-              </button>
+              </button></a>
+            
+
             </div>
             <div className="mt-12 flex items-center justify-center gap-8 text-gray-400 animate-fade-in">
               <div className="flex items-center">
                 <Users className="w-5 h-5 mr-2" />
-                <span>10k+ Users</span>
+                <span>10k+ Users(soon)</span>
               </div>
               <div className="flex items-center">
                 <Star className="w-5 h-5 mr-2" />
-                <span>4.9 Rating</span>
+                <span>4.9 Rating(by me)</span>
               </div>
               <div className="flex items-center">
                 <Heart className="w-5 h-5 mr-2" />
-                <span>50k+ Recipes</span>
+                <span>50k+ Recipes(soon)</span>
               </div>
             </div>
           </div>
@@ -200,7 +207,7 @@ function App() {
             </div>
           </div>
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-800">
-            <p className="text-gray-500 text-sm">© 2024 ChefGPT. All rights reserved.</p>
+            <p className="text-gray-500 text-sm">© 2024 ChefGPT. Made with 💗 by Avinash</p>
             <div className="flex items-center gap-6">
               <Twitter className="w-5 h-5 text-gray-400 hover:text-emerald-400 cursor-pointer transition-colors duration-300" />
               <Github className="w-5 h-5 text-gray-400 hover:text-emerald-400 cursor-pointer transition-colors duration-300" />
@@ -224,6 +231,8 @@ function FeatureCard({ icon, title, description, delay }: { icon: React.ReactNod
       <p className="text-gray-400">{description}</p>
     </div>
   );
+
+
 }
 
 export default App;
